@@ -1,6 +1,6 @@
 <?php
 
-require "model/TemplatingSystem.php";
+
 require "model/HTMLElements.php";
 
 class ContactController {
