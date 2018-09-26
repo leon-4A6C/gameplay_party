@@ -10,9 +10,12 @@
 <body>
 <nav class="breadcrumb is-centered has-bullet-separator" aria-label="breadcrumbs">
   <ul>
-    <li><a href="#">Bulma</a></li>
-    <li><a href="#">Documentation</a></li>
-    <li><a href="#">Components</a></li>
-    <li><a href="#">Breadcrumb</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Overzicht</a></li>
+    <li><a href="#">Reserveringen</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
+  	<div class="seach" style="width: 20%; float: right;">
+  		<input class="input is-rounded" name="search" placeholder="Zoeken">
+	</div>
 </nav>
