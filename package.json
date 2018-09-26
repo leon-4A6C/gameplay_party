@@ -1,0 +1,27 @@
+{
+  "name": "gameplay_party",
+  "version": "1.0.0",
+  "description": "gameplay party project",
+  "main": "index.js",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/index.scss css/styles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon-4A6C/gameplay_party.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leon-4A6C/gameplay_party/issues"
+  },
+  "homepage": "https://github.com/leon-4A6C/gameplay_party#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "bulma": "^0.7.1",
+    "node-sass": "^4.9.3"
+  }
+}
