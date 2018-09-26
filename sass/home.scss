@@ -1,0 +1,26 @@
+.hover {
+    transition: 300ms ease-in-out transform, 300ms ease-in-out box-shadow;
+    box-shadow: 0 1em 1em 0em rgba(0, 0, 0, 0.5);
+    &:hover {
+        transform: translateY(-1em);
+        box-shadow: 0 2em 2em 0em rgba(0, 0, 0, 0.5);
+    }
+}
+
+.columns-background {
+    width: 100%;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    background: $white-ter;
+    position: absolute;
+}
+
+.home-columns-section {
+    position: relative;
+}
+
+.image-header {
+    height: 45vh;
+    overflow: hidden;
+}

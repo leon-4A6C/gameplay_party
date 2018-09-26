@@ -19,7 +19,8 @@
     "url": "https://github.com/leon-4A6C/gameplay_party/issues"
   },
   "homepage": "https://github.com/leon-4A6C/gameplay_party#readme",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "bulma": "^0.7.1",
     "node-sass": "^4.9.3"
