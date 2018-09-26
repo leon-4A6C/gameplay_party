@@ -26,7 +26,6 @@ class TemplatingSystem {
      * @var string
      */
     public $tpl = "";
-
     /**
      * if the template is read
      *
