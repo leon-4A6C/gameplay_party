@@ -2,3 +2,10 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [NC,L,QSA]
+
+RewriteRule ^(.*)$\.css css/styles.css [NC,L,QSA]
+RewriteRule ^(.*)$\.js js/$1.js [NC,L,QSA]
+RewriteRule ^(.*)$\.jpg images/$1.jpg [NC,L,QSA]
+RewriteRule ^(.*)$\.png images/$1.png [NC,L,QSA]
+RewriteRule ^(.*)$\.gif images/$1.gif [NC,L,QSA]
+RewriteRule ^(.*)$\.svg images/$1.svg [NC,L,QSA]
