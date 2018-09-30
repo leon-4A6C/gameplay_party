@@ -2,21 +2,55 @@
 
 require_once "DataHandler.php";
 
+/**
+ * UserModel class
+ */
 class UserModel {
 
+    /**
+     * the logged in user
+     *
+     * @var array
+     */
     public $user;
+
+    /**
+     * if the user is logged in
+     *
+     * @var boolean
+     */
     public $isLoggedIn = false;
+
+    /**
+     * the dataHandler
+     *
+     * @var DataHandler
+     */
+    public $dataHandler;
 
     public function __construct() {
         $this->dataHandler = new DataHandler("localhost", DB_DATABASE, DB_USERNAME, DB_PASSWORD);
 
-        $this->loginFromSession();
+        $this->sessionLogin();
     }
-
+    
+    /**
+     * generates a BCRYPT password
+     *
+     * @param string $password the password you want to encrypt
+     * @return string password hash
+     */
     public function generatePassword(string $password) {
         return password_hash($password, PASSWORD_BCRYPT);
     }
 
+    /**
+     * check if the filled in password from a user is correct
+     *
+     * @param string $username the username
+     * @param string $password the password
+     * @return bool
+     */
     public function checkPassword(string $username, string $password) {
 
         $user = $this->dataHandler->readData(
@@ -32,7 +66,12 @@ class UserModel {
 
     }
 
-    public function loginFromSession() {
+    /**
+     * logges in from session
+     *
+     * @return bool
+     */
+    public function sessionLogin() {
         if(isset($_SESSION["user"])) {
             $this->user = $_SESSION["user"];
             $this->isLoggedIn = true;
@@ -43,6 +82,13 @@ class UserModel {
         return false;
     }
 
+    /**
+     * logges the user in
+     *
+     * @param string $username the users username
+     * @param string $password the users password
+     * @return bool
+     */
     public function login(string $username, string $password) {
         if($this->checkPassword($username, $password)) {
             $this->user = $this->dataHandler->readData(

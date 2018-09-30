@@ -10,6 +10,13 @@ require_once "DataHandler.php";
 class RoleModel {
 
     /**
+     * the dataHandler
+     *
+     * @var DataHandler
+     */
+    public $dataHandler;
+
+    /**
      * the constructor
      */
     public function __construct() {
