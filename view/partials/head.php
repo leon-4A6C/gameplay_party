@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +6,23 @@
     <title>Gameplay party</title>
 </head>
 <body>
-	<nav class="breadcrumb" aria-label="breadcrumbs">
+
+  <header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
+
+    <nav class="navbar is-fixed" style= "background-color: #34495e;" aria-label="breadcrumbs">
+  <img src="\gpp\gpp.svg" width="112" height="28" alt="Bulma">
   <ul>
-    <li>
-      <a href="#">
-        <span class="icon is-small">
-          <i class="fas fa-home" aria-hidden="true"></i>
-        </span>
-        <span>Bulma</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="icon is-small">
-          <i class="fas fa-book" aria-hidden="true"></i>
-        </span>
-        <span>Documentation</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="icon is-small">
-          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-        </span>
-        <span>Components</span>
-      </a>
-    </li>
-    <li class="is-active">
-      <a href="#">
-        <span class="icon is-small">
-          <i class="fas fa-thumbs-up" aria-hidden="true"></i>
-        </span>
-        <span>Breadcrumb</span>
-      </a>
-    </li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Overzicht</a></li>
+    <li><a href="#">Reserveringen</a></li>
+    <li><a href="#">Contact</a></li>
+    <span style="float: right;"></span>
+    <div class="search" style="width: 15%;">
+      <input class="input is-rounded" name="search" placeholder="Zoeken">
+   </div>
   </ul>
+  	
 </nav>
+</header>
