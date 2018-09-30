@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
 
     <nav class="navbar-brand is-fixed" style= "background-color: #34495e;" aria-label="breadcrumbs">
-  <img src="\gpp\gpp.svg" width="112" height="28" alt="Bulma">
+  <img src="assets/images/gpp.svg" width="112" height="28" alt="Bulma">
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Overzicht</a></li>
