@@ -18,8 +18,15 @@ class LoginController {
     public function loggingIn() {
         $this->userModel->login($_REQUEST["username"], $_REQUEST["password"]);
 
+        if(!$this->userModel->isLoggedIn)
+            return $this->authModel->redirect("/login?error" . (isset($_GET["redirect"]) ? ("&redirect=".urlencode($_GET["redirect"])) : ""));
+
+        // if redirected to login page go back
+        if(isset($_GET["redirect"]))
+            return $this->authModel->redirect($_GET["redirect"]);
+        
         // go somewhere
-        $this->authModel->redirect("securePage");
+        $this->authModel->redirect("/login/securePage");
     }
 
     // example

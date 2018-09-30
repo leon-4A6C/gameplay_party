@@ -9,6 +9,12 @@
 
         <div class="column is-half-tablet is-one-third-desktop">
 
+            <?php if(isset($_GET["error"])): ?>
+            <div class="notification is-danger">
+                Uw wachtwoord of gebruikersnaam is onjuist, probeer het opnieuw.
+            </div>
+            <?php endif; ?>
+
             <div class="card">
                 <header class="card-header">
                     <h2 class="card-header-title">
@@ -18,7 +24,7 @@
                 <div class="card-content">
                     <div class="content">
                         
-                        <form action="/login/loggingIn" method="post">
+                        <form action="/login/loggingIn<?php echo isset($_GET["redirect"]) ? ("?redirect=".urlencode($_GET["redirect"])) : ""; ?>" method="post">
                             <div class="field">
                                 <label for="username" class="label">Gebruikersnaam:</label>
                                 <div class="control">

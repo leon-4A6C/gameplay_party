@@ -33,6 +33,20 @@ class UserModel {
 
         $this->sessionLogin();
     }
+
+    /**
+     * reads a user
+     *
+     * @param string $username the user you want to read
+     * @return array the user data
+     */
+    public function read(string $username) {
+        return $this->dataHandler->readData(
+            "SELECT * FROM `users` WHERE `username` = :username",
+            [":username" => $username],
+            false
+        );
+    }
     
     /**
      * generates a BCRYPT password
@@ -53,11 +67,7 @@ class UserModel {
      */
     public function checkPassword(string $username, string $password) {
 
-        $user = $this->dataHandler->readData(
-            "SELECT `password` FROM `users` WHERE `username` = :username",
-            [":username" => $username],
-            false
-        );
+        $user = $this->read($username);
 
         if($user)
             return password_verify($password, $user["password"]);
@@ -74,7 +84,11 @@ class UserModel {
     public function sessionLogin() {
         if(isset($_SESSION["user"])) {
             // logges in the user, also updates the user info if changed
-            return $this->login($_SESSION["user"]["username"], $_SESSION["user"]["password"]);
+            $this->user = $this->read($_SESSION["user"]["username"]);
+
+            $_SESSION["user"] = $this->user;
+            $this->isLoggedIn = true;
+            return true;
         }
 
         return false;
@@ -89,11 +103,7 @@ class UserModel {
      */
     public function login(string $username, string $password) {
         if($this->checkPassword($username, $password)) {
-            $this->user = $this->dataHandler->readData(
-                "SELECT * FROM `users` WHERE `username` = :username",
-                [":username" => $username],
-                false
-            );
+            $this->user = $this->read($username);
 
             $_SESSION["user"] = $this->user;
             $this->isLoggedIn = true;

@@ -15,7 +15,7 @@ CREATE TABLE `users` (
     `role_id` int,
 
     PRIMARY KEY(`id`),
-    FOREIGN KEY(`role_id`) REFERENCES `roles`(id)
+    FOREIGN KEY(`role_id`) REFERENCES `roles`(`id`)
 );
 
 INSERT INTO `roles`(`name`) VALUES

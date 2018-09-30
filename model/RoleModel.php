@@ -31,7 +31,7 @@ class RoleModel {
      */
     public function read(int $id = null) {
 
-        if(!isset($id)) {
+        if(!$id) {
             return $this->dataHandler->readData("SELECT * FROM `roles`");
         } else {
             return $this->dataHandler->readData("SELECT * FROM `roles` WHERE `id` = :id", [":id" => $id], false);
