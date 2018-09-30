@@ -3,13 +3,14 @@ DROP TABLE IF EXISTS `roles`;
 
 CREATE TABLE `roles` (
     `id` int NOT NULL UNIQUE AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL,
 
-    `name` varchar(255) NOT NULL
+    PRIMARY KEY(`id`)
 );
 
 CREATE TABLE `users` (
     `id` int NOT NULL UNIQUE AUTO_INCREMENT,
-    `username` varchar(255) UNIQUE NOT NULL,
+    `username` varchar(60) UNIQUE NOT NULL,
     `password` char(60) NOT NULL,
     `role_id` int,
 
