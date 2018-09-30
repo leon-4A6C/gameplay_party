@@ -5,9 +5,9 @@
 
     <div class="columns">
 
-        <div class="column"></div>
+        <div class="column is-desktop"></div>
 
-        <div class="column">
+        <div class="column is-half-tablet is-one-third-desktop">
 
             <div class="card">
                 <header class="card-header">
@@ -44,7 +44,7 @@
 
         </div>
 
-        <div class="column"></div>
+        <div class="column is-desktop"></div>
 
     </div>
 
