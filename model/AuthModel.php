@@ -12,7 +12,7 @@ class AuthModel {
 
     public function auth(array $roles) {
         if(!$this->userModel->isLoggedIn || !$this->checkUserRole($roles))
-            return $this->redirect("../login");
+            return $this->redirect("/login");
     }
 
     public function checkUserRole(array $roles) {

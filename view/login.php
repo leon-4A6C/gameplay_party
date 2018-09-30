@@ -18,7 +18,7 @@
                 <div class="card-content">
                     <div class="content">
                         
-                        <form action="login/loggingIn" method="post">
+                        <form action="/login/loggingIn" method="post">
                             <div class="field">
                                 <label for="username" class="label">Gebruikersnaam:</label>
                                 <div class="control">
