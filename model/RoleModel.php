@@ -2,12 +2,26 @@
 
 require_once "DataHandler.php";
 
+/**
+ * RoleModel class
+ * 
+ * CRUD for the roles table
+ */
 class RoleModel {
 
+    /**
+     * the constructor
+     */
     public function __construct() {
         $this->dataHandler = new DataHandler("localhost", DB_DATABASE, DB_USERNAME, DB_PASSWORD);
     }
 
+    /**
+     * reads all or specified roles
+     *
+     * @param integer $id the id you want, this is optional
+     * @return array the query result
+     */
     public function read(int $id = null) {
 
         if(!isset($id)) {
