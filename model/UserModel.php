@@ -73,10 +73,8 @@ class UserModel {
      */
     public function sessionLogin() {
         if(isset($_SESSION["user"])) {
-            $this->user = $_SESSION["user"];
-            $this->isLoggedIn = true;
-
-            return true;
+            // logges in the user, also updates the user info if changed
+            return $this->login($_SESSION["user"]["username"], $_SESSION["user"]["password"]);
         }
 
         return false;
