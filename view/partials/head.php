@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +6,23 @@
     <title>Gameplay party</title>
 </head>
 <body>
-<nav class="breadcrumb is-centered has-bullet-separator" aria-label="breadcrumbs">
+
+  <header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
+
+    <nav class="navbar is-fixed" style= "background-color: #34495e;" aria-label="breadcrumbs">
+  <img src="\gpp\gpp.svg" width="112" height="28" alt="Bulma">
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Overzicht</a></li>
     <li><a href="#">Reserveringen</a></li>
     <li><a href="#">Contact</a></li>
+    <span style="float: right;"></span>
+    <div class="search" style="width: 15%;">
+      <input class="input is-rounded" name="search" placeholder="Zoeken">
+   </div>
   </ul>
-  	<div class="seach" style="width: 20%; float: right;">
-  		<input class="input is-rounded" name="search" placeholder="Zoeken">
-	</div>
+  	
 </nav>
+</header>
