@@ -16,4 +16,8 @@ class HomeController {
         include "view/overonspagina.php";
     }
 
+    public function contactpagina() {
+        include "view/contactpagina.php";
+    }
+
 }
