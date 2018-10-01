@@ -1,10 +1,16 @@
-<?php require "partials/head.php"; ?>
+DROP TABLE IF EXISTS `cms`;
 
-<html>
-<head>
-    <title>Over Ons</title>
-</head>
-<body>
+CREATE TABLE `cms` (
+    `path` varchar(50) NOT NULL UNIQUE,
+
+    `title` varchar(25),
+    `content` TEXT,
+
+    PRIMARY KEY(`path`)
+);
+
+INSERT INTO `cms`(`title`, `path`, `content`) VALUES
+("over ons", "overons", '
 <div class="container">
 
     <section class="hero">
@@ -34,24 +40,16 @@
 
 </div>
 
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h3 class="title is-1">
-                    Lorem, ipsum.
-                </h3>
-                <p class="subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis modi aut mollitia tempore. Animi, tempora?
-                </p>
-            </div>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h3 class="title is-1">
+                Lorem, ipsum.
+            </h3>
+            <p class="subtitle">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis modi aut mollitia tempore. Animi, tempora?
+            </p>
         </div>
-    </section>
-
-
-
-</body>
-</html>
-
-
-
-<?php require "partials/footer.php"; ?>
+    </div>
+</section>
+');

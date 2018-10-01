@@ -3,7 +3,7 @@
 <header class="image-header">
 
     <figure class="image">
-        <img src="../images/homepage_1.jpg" alt="homepage afbeelding">
+        <img src="/images/homepage_1.jpg" alt="homepage afbeelding">
     </figure>
 
 </header>
