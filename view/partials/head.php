@@ -9,8 +9,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-=======
   <header>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
@@ -30,4 +28,3 @@
   	
 </nav>
 </header>
->>>>>>> master
