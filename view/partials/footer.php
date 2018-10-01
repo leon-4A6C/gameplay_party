@@ -7,3 +7,5 @@
 		<a href="www.instagram.com"><img src="assets/images/instagram.png" class="button" height="45px"/></a>
   </div>
 </footer>
+</body>
+</html>
