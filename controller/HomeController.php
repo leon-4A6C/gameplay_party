@@ -12,8 +12,4 @@ class HomeController {
         include "view/homepagina.php";
     }
 
-    public function overons() {
-        include "view/overons.php";
-    }
-
 }
