@@ -19,6 +19,7 @@
     <li><a href="#">Home</a></li>
     <li><a href="#">Overzicht</a></li>
     <li><a href="#">Reserveringen</a></li>
+    <li><a href="cms/overons">Over ons</a></li>
     <li><a href="#">Contact</a></li>
     <span style="float: right;"></span>
     <div class="search" style="width: 70%;">
