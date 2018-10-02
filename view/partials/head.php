@@ -16,7 +16,7 @@
 <nav class="navbar is-dark">
   <div class="navbar-brand">
     <a class="navbar-item" href="cms/hoofdpagina">
-      <img src="view\assets\images\gpp.svg" alt="#" width="112" height="28">
+      <img src="view\assets\images\gpp.svg" alt="#" width="112" height="28">Gameplay Party
     </a>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
