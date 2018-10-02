@@ -15,7 +15,7 @@
 
 <nav class="navbar is-dark">
   <div class="navbar-brand">
-    <a class="navbar-item" href="cms/hoofdpagina">
+    <a class="navbar-item" href="/">
       <img src="view\assets\images\gpp.svg" alt="#" width="112" height="28">Gameplay Party
     </a>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -26,19 +26,19 @@
   </div>
 
   <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <a class="navbar-item" href="cms/hoofdpagina">
+      <a class="navbar-item" href="/">
         Home
       </a>
-      <a class="navbar-item" href="#">
+      <a class="navbar-item" href="/bios">
         Overzicht
       </a>
       <a class="navbar-item" href="#">
         Reserveringen
       </a>
-      <a class="navbar-item" href="cms/overons">
+      <a class="navbar-item" href="/cms/overons">
         Over ons
       </a>
-      <a class="navbar-item" href="#">
+      <a class="navbar-item" href="/cms/contact">
         Contact
       </a>
 

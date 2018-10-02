@@ -34,7 +34,7 @@ class BiosController {
         include "view/tableView.php";
     }
 
-    public function detail($id = null) {
+    public function detail($id) {
         $table = HTMLElements::table(
             $this->biosModel->read($id),
             "table"
