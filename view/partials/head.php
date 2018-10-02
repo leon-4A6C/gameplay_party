@@ -26,7 +26,6 @@
   </div>
 
   <div id="navbarExampleTransparentExample" class="navbar-menu">
-    <div class="navbar-start">
       <a class="navbar-item" href="cms/hoofdpagina">
         Home
       </a>
