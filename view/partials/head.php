@@ -13,19 +13,43 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
 
-    <nav class="navbar-brand" style= "background-color: #34495e;" aria-label="breadcrumbs">
-  <img src="" width="112" height="28" alt="Bulma">
-  <ul>
-    <li><a href="cms/hoofdpagina">Home</a></li>
-    <li><a href="#">Overzicht</a></li>
-    <li><a href="#">Reserveringen</a></li>
-    <li><a href="cms/overons">Over ons</a></li>
-    <li><a href="#">Contact</a></li>
-    <span style="float: right;"></span>
+<nav class="navbar is-dark">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="cms/hoofdpagina">
+      <img src="view\assets\images\gpp.svg" alt="#" width="112" height="28">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="cms/hoofdpagina">
+        Home
+      </a>
+      <a class="navbar-item" href="#">
+        Overzicht
+      </a>
+      <a class="navbar-item" href="#">
+        Reserveringen
+      </a>
+      <a class="navbar-item" href="cms/overons">
+        Over ons
+      </a>
+      <a class="navbar-item" href="#">
+        Contact
+      </a>
+
+      <span style="float: right;"></span>
     <div class="search" style="width: 70%;">
       <input class="input is-rounded" name="search" placeholder="Zoeken">
    </div>
-  </ul>
-  	
+    </div>
+
+    
+  </div>
 </nav>
 </header>
