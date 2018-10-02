@@ -14,15 +14,15 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema gpp
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `gpp` ;
-USE `gpp` ;
+-- CREATE SCHEMA IF NOT EXISTS `gpp` ;
+-- USE `gpp` ;
 
 -- -----------------------------------------------------
--- Table `gpp`.`bioscopen`
+-- Table `bioscopen`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`bioscopen` ;
+DROP TABLE IF EXISTS `bioscopen` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`bioscopen` (
+CREATE TABLE IF NOT EXISTS `bioscopen` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `bioscoop_naam` VARCHAR(100) NOT NULL,
   `straatnaam` VARCHAR(100) NOT NULL,
@@ -39,11 +39,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`zalen`
+-- Table `zalen`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`zalen` ;
+DROP TABLE IF EXISTS `zalen` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`zalen` (
+CREATE TABLE IF NOT EXISTS `zalen` (
   `zaalnummer` INT UNSIGNED NOT NULL,
   `bioscopen_id` INT UNSIGNED NOT NULL,
   `aantal_stoelen` INT NOT NULL,
@@ -55,18 +55,18 @@ CREATE TABLE IF NOT EXISTS `gpp`.`zalen` (
   INDEX `fk_zalen_bioscopen1_idx` (`bioscopen_id` ASC),
   CONSTRAINT `fk_zalen_bioscopen1`
     FOREIGN KEY (`bioscopen_id`)
-    REFERENCES `gpp`.`bioscopen` (`id`)
+    REFERENCES `bioscopen` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`reserveringen`
+-- Table `reserveringen`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`reserveringen` ;
+DROP TABLE IF EXISTS `reserveringen` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`reserveringen` (
+CREATE TABLE IF NOT EXISTS `reserveringen` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `geslacht` TINYINT(1) NOT NULL DEFAULT 0,
   `voornaam` VARCHAR(75) NOT NULL,
@@ -89,18 +89,18 @@ CREATE TABLE IF NOT EXISTS `gpp`.`reserveringen` (
   INDEX `fk_reserveringen_zalen1_idx` (`zalen_zaalnummer` ASC, `bioscoop_id` ASC),
   CONSTRAINT `fk_reserveringen_zalen1`
     FOREIGN KEY (`zalen_zaalnummer` , `bioscoop_id`)
-    REFERENCES `gpp`.`zalen` (`zaalnummer` , `bioscopen_id`)
+    REFERENCES `zalen` (`zaalnummer` , `bioscopen_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`betalingen`
+-- Table `betalingen`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`betalingen` ;
+DROP TABLE IF EXISTS `betalingen` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`betalingen` (
+CREATE TABLE IF NOT EXISTS `betalingen` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `reserveringen_id` INT UNSIGNED NOT NULL,
   `percentage_betaald` INT NOT NULL,
@@ -110,18 +110,18 @@ CREATE TABLE IF NOT EXISTS `gpp`.`betalingen` (
   INDEX `fk_betalingen_reserveringen_idx` (`reserveringen_id` ASC),
   CONSTRAINT `fk_betalingen_reserveringen`
     FOREIGN KEY (`reserveringen_id`)
-    REFERENCES `gpp`.`reserveringen` (`id`)
+    REFERENCES `reserveringen` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`tarieven`
+-- Table `tarieven`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`tarieven` ;
+DROP TABLE IF EXISTS `tarieven` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`tarieven` (
+CREATE TABLE IF NOT EXISTS `tarieven` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `bioscopen_id` INT UNSIGNED NOT NULL,
   `prijs` DECIMAL(9,2) NOT NULL,
@@ -131,18 +131,18 @@ CREATE TABLE IF NOT EXISTS `gpp`.`tarieven` (
   INDEX `fk_tarieven_bioscopen1_idx` (`bioscopen_id` ASC),
   CONSTRAINT `fk_tarieven_bioscopen1`
     FOREIGN KEY (`bioscopen_id`)
-    REFERENCES `gpp`.`bioscopen` (`id`)
+    REFERENCES `bioscopen` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`geselecteerde_tarieven`
+-- Table `geselecteerde_tarieven`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`geselecteerde_tarieven` ;
+DROP TABLE IF EXISTS `geselecteerde_tarieven` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`geselecteerde_tarieven` (
+CREATE TABLE IF NOT EXISTS `geselecteerde_tarieven` (
   `reserveringen_id` INT UNSIGNED NOT NULL,
   `tarieven_id` INT UNSIGNED NOT NULL,
   `aantal_personen` INT NOT NULL,
@@ -151,23 +151,23 @@ CREATE TABLE IF NOT EXISTS `gpp`.`geselecteerde_tarieven` (
   INDEX `fk_reserveringen_has_tarieven_reserveringen1_idx` (`reserveringen_id` ASC),
   CONSTRAINT `fk_reserveringen_has_tarieven_reserveringen1`
     FOREIGN KEY (`reserveringen_id`)
-    REFERENCES `gpp`.`reserveringen` (`id`)
+    REFERENCES `reserveringen` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_reserveringen_has_tarieven_tarieven1`
     FOREIGN KEY (`tarieven_id`)
-    REFERENCES `gpp`.`tarieven` (`id`)
+    REFERENCES `tarieven` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`openingstijden`
+-- Table `openingstijden`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`openingstijden` ;
+DROP TABLE IF EXISTS `openingstijden` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`openingstijden` (
+CREATE TABLE IF NOT EXISTS `openingstijden` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `bioscopen_id` INT UNSIGNED NOT NULL,
   `dag` VARCHAR(45) NOT NULL,
@@ -177,18 +177,18 @@ CREATE TABLE IF NOT EXISTS `gpp`.`openingstijden` (
   INDEX `fk_openingstijden_bioscopen1_idx` (`bioscopen_id` ASC),
   CONSTRAINT `fk_openingstijden_bioscopen1`
     FOREIGN KEY (`bioscopen_id`)
-    REFERENCES `gpp`.`bioscopen` (`id`)
+    REFERENCES `bioscopen` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gpp`.`bereikbaarheden`
+-- Table `bereikbaarheden`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gpp`.`bereikbaarheden` ;
+DROP TABLE IF EXISTS `bereikbaarheden` ;
 
-CREATE TABLE IF NOT EXISTS `gpp`.`bereikbaarheden` (
+CREATE TABLE IF NOT EXISTS `bereikbaarheden` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `bioscopen_id` INT UNSIGNED NOT NULL,
   `naam` VARCHAR(45) NOT NULL,
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `gpp`.`bereikbaarheden` (
   INDEX `fk_bereikbaarheden_bioscopen1_idx` (`bioscopen_id` ASC),
   CONSTRAINT `fk_bereikbaarheden_bioscopen1`
     FOREIGN KEY (`bioscopen_id`)
-    REFERENCES `gpp`.`bioscopen` (`id`)
+    REFERENCES `bioscopen` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
