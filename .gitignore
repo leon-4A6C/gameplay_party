@@ -1,5 +1,9 @@
 node_modules
 css/
 config.php
+<<<<<<< HEAD
+gpp/
+=======
 .idea/
 DB/database.mwb.bak
+>>>>>>> master
