@@ -42,8 +42,7 @@
         Contact
       </a>
 
-      <span style="float: right;"></span>
-    <div class="search" style="width: 70%;">
+    <div class="search" style="width: 15%; float: right;">
       <input class="input is-rounded" name="search" placeholder="Zoeken">
    </div>
     </div>

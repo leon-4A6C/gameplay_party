@@ -3,8 +3,8 @@
     <div>
       <strong>Gameplay Party</strong> by Pieter Piper.</br> Copyright © 2018 - Gameplay Party
     </div>
-    	<a href="www.facebook.nl"><img src="\view\assets\images\facebook.png" class="button" height="45px"/></a>
-		<a href="www.instagram.com"><img src="\view\assets\images\instagram.png" class="button" height="45px"/></a>
+    	<a href="https://www.facebook.nl"><img src="\view\assets\images\facebook.png" class="button" height="45px"/></a>
+		<a href="https://www.instagram.com"><img src="\view\assets\images\instagram.png" class="button" height="45px"/></a>
   </div>
 </footer>
 </body>
