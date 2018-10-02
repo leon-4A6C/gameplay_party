@@ -1,16 +1,12 @@
-DROP TABLE IF EXISTS `cms`;
+<?php require "partials/head.php"; ?>
 
-CREATE TABLE `cms` (
-    `path` varchar(50) NOT NULL UNIQUE,
+<html>
 
-    `title` varchar(25),
-    `content` TEXT,
+<head>
+    <title>Over Ons</title>
+</head>
 
-    PRIMARY KEY(`path`)
-);
-
-INSERT INTO `cms`(`title`, `path`, `content`) VALUES
-("over ons", "overons", '
+<body>
 
 <div class="container">
 
@@ -74,4 +70,13 @@ INSERT INTO `cms`(`title`, `path`, `content`) VALUES
             </article>
         </div>
     </div>
-');
+
+</body>
+
+
+</html>
+
+
+
+
+<?php require "partials/footer.php"; ?>
