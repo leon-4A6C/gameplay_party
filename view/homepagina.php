@@ -15,7 +15,7 @@
                 Gameplay party
             </h1>
             <p class="subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis modi aut mollitia tempore. Animi, tempora?
+                Huur een bioscoopzaal om te gamen.
             </p>
         </div>
     </div>
@@ -33,14 +33,14 @@
                     <div class="card hover">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                <img src="/view/assets/images/christian-wiediger-622476-unsplash.jpg" alt="Placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
-                                    <p class="title is-3">100% goed</p>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, culpa?</p>
+                                    <p class="title is-3">Kinepolis Almere</p>
+                                    <p>Kinepolis Almere is sinds 2004 gevestigd in het levendige centrum van Almere.</p>
                                 </div>
                             </div>
                         </div>
@@ -50,14 +50,14 @@
                     <div class="card hover">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                <img src="/view/assets/images/denise-jans-563121-unsplash.jpg" alt="Placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
-                                    <p class="title is-3">100% bios</p>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, culpa?</p>
+                                    <p class="title is-3">Kinepolis Breda</p>
+                                    <p>Kinepolis Breda op het Breepark is dé plek waar een filmbezoek een ware beleving wordt.</p>
                                 </div>
                             </div>
                         </div>
@@ -67,14 +67,14 @@
                     <div class="card hover">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                <img src="/view/assets/images/joshua-hoehne-671380-unsplash.jpg" alt="Placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
-                                    <p class="title is-3">100% leuk</p>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, culpa?</p>
+                                    <p class="title is-3">Kinepolis CineMagnus Schagen</p>
+                                    <p>De naam is een samenvoeging van de woorden 'Cinema' en 'Magnus'. Schagen wordt ook wel 'Magnusveste' genoemd.</p>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
     </div>
 </section>
 
-<section class="hero">
+<!-- <section class="hero">
     <div class="hero-body">
         <div class="container has-text-centered">
             <h3 class="title is-1">
@@ -99,6 +99,6 @@
             </p>
         </div>
     </div>
-</section>
+</section> -->
 
 <?php require "partials/footer.php"; ?>
