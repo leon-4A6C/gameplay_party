@@ -32,14 +32,10 @@
       <a class="navbar-item" href="/bios">
         Overzicht
       </a>
-<<<<<<< HEAD
       <a class="navbar-item" href="#">
         Reserveringen
       </a>
-      <a class="navbar-item" href="/cms/overons">
-=======
       <a class="navbar-item" href="cms/overons">
->>>>>>> youssra
         Over ons
       </a>
       <a class="navbar-item" href="/cms/contact">
