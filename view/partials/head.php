@@ -13,7 +13,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
 
-<nav class="navbar is-dark" style="background-color: #A3CB38; color: white;">
+<nav class="navbar is-dark" style="background-color: #A3CB38;">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <img src="view\assets\images\gpp.svg" alt="#" width="112" height="28">Gameplay Party
