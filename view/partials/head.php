@@ -32,7 +32,7 @@
       <a class="navbar-item" href="/bios">
         Overzicht
       </a>
-      <a class="navbar-item" href="cms/overons">
+      <a class="navbar-item" href="/cms/overons">
         Over ons
       </a>
       <a class="navbar-item" href="/cms/contact">
