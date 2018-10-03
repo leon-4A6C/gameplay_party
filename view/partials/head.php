@@ -32,9 +32,6 @@
       <a class="navbar-item" href="#">
         Overzicht
       </a>
-      <a class="navbar-item" href="#">
-        Reserveringen
-      </a>
       <a class="navbar-item" href="cms/overons">
         Over ons
       </a>
