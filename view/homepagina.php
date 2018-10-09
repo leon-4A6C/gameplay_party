@@ -30,7 +30,7 @@
         
             <div class="columns is-8 is-variable">
                 <div class="column">
-                    <div class="card hover">
+                    <div class="card hover card-equal-height">
                         <div class="card-image">
                             <figure class="image is-4by3">
                                 <img src="/view/assets/images/christian-wiediger-622476-unsplash.jpg" alt="Placeholder image">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="card hover">
+                    <div class="card hover card-equal-height">
                         <div class="card-image">
                             <figure class="image is-4by3">
                                 <img src="/view/assets/images/denise-jans-563121-unsplash.jpg" alt="Placeholder image">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="card hover">
+                    <div class="card hover card-equal-height">
                         <div class="card-image">
                             <figure class="image is-4by3">
                                 <img src="/view/assets/images/joshua-hoehne-671380-unsplash.jpg" alt="Placeholder image">

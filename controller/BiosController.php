@@ -43,4 +43,8 @@ class BiosController {
         include "view/tableView.php";
     }
 
+    public function create() {
+        include "view/createBios.php";
+    }
+
 }
