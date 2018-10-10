@@ -66,10 +66,10 @@
       <a class="navbar-item" href="/cms/contact">
         Contact
       </a>
+      <a class="navbar-item">
+        <input class="input is-rounded" name="search" placeholder="Zoeken">
+      </a>
 
-    <div class="search" style="width: 15%; float: right;">
-      <input class="input is-rounded" name="search" placeholder="Zoeken">
-   </div>
     </div>
   </div>
 </nav>
