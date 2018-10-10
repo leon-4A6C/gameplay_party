@@ -63,7 +63,7 @@
       <a class="navbar-item" href="/cms/overons">
         Over ons
       </a>
-      <a class="navbar-item" href="/cms/contactFormulier">
+      <a class="navbar-item" href="/cms/contact">
         Contact
       </a>
       <a class="navbar-item">
