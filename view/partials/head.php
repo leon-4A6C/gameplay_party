@@ -43,9 +43,9 @@
 
 <nav class="navbar is-dark is-fixed" style="background-color: #A3CB38; position: fixed; width: 100%;">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/view\assets\images\gpp.svg" alt="#" width="112" height="100px">Gameplay Party
-    </a>
+    <div class="logo" style="width: 300px;">
+      <img src="/view\assets\images\gpp.svg" alt="#">
+    </div>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>
