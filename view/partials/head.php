@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Gameplay party</title>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+    </script>
 </head>
 <body>
 
@@ -14,11 +42,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
 
-<nav class="navbar is-dark is-fixed" style="background-color: #A3CB38;">
+<nav class="navbar is-dark is-fixed" style="background-color: #A3CB38; position: fixed; width: 100%;">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/view\assets\images\gpp.svg" alt="#" width="112" height="28">Gameplay Party
-    </a>
+    <div class="logo" style="width: 300px;">
+      <img src="/view\assets\images\gpp.svg" alt="#">
+    </div>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>
@@ -39,13 +67,11 @@
       <a class="navbar-item" href="/cms/contact">
         Contact
       </a>
+      <a class="navbar-item">
+        <input class="input is-rounded" name="search" placeholder="Zoeken">
+      </a>
 
-    <div class="search" style="width: 15%; float: right;">
-      <input class="input is-rounded" name="search" placeholder="Zoeken">
-   </div>
     </div>
-
-    
   </div>
 </nav>
 </header>
