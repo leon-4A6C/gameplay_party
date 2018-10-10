@@ -1,6 +1,6 @@
 <?php
 
-require "DataHandler.php";
+require_once "DataHandler.php";
 
 /**
  * Zalen model class
@@ -39,6 +39,21 @@ class ZalenModel {
         return $this->dataHandler->readData(
             "SELECT * FROM `openingstijden` WHERE bioscopen_id = :bioscopen_id",
             [":bioscopen_id"]
+        );
+    }
+
+    public function create($zaalnummer, $bioscopen_id, $aantal_stoelen, $rolstoelplaatsen, $schermgrootte, $faciliteiten, $versies) {
+        return $this->dataHandler->createData(
+            "INSERT INTO `zalen`(`zaalnummer`, `bioscopen_id`, `aantal_stoelen`, `rolstoelplaatsen`, `schermgrootte`, `faciliteiten`, `versies`) VALUES (:zaalnummer, :bioscopen_id, :aantal_stoelen, :rolstoelplaatsen, :schermgrootte, :faciliteiten, :versies)",
+            [
+                ":zaalnummer" => $zaalnummer,
+                ":bioscopen_id" => $bioscopen_id,
+                ":aantal_stoelen" => $aantal_stoelen,
+                ":rolstoelplaatsen" => $rolstoelplaatsen,
+                ":schermgrootte" => $schermgrootte,
+                ":faciliteiten" => $faciliteiten,
+                ":versies" => $versies
+            ]
         );
     }
 

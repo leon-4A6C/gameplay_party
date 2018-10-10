@@ -1,4 +1,3 @@
-
 <?php require "partials/head.php"; ?>
 
 <section class="section">
@@ -24,7 +23,7 @@
             <div class="card-content">
                 <div class="content">
                     
-                    <form action="/bios/create" method="post">
+                    <form action="/bios/add" method="post" enctype="multipart/form-data">
                         <div class="field">
                             <label for="bioscoop_naam" class="label">Naam:</label>
                             <div class="control">
@@ -36,6 +35,26 @@
                             <label for="beschrijving" class="label">Beschrijving:</label>
                             <div class="control">
                                 <textarea id="beschrijving" name="beschrijving" class="textarea" placeholder="Beschrijving"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="images-input" class="label">Afbeeldingen</label>
+                            <div class="file has-name is-boxed">
+                                <label class="file-label">
+                                    <input id="images-input" class="file-input" type="file" name="images[]" multiple accept="image/*">
+                                    <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose a file…
+                                    </span>
+                                    </span>
+                                    <span id="images-name" class="file-name">
+                                        geen afbeeldingen geselecteerd
+                                    </span>
+                                </label>
                             </div>
                         </div>
 
@@ -112,8 +131,29 @@
                         <label for="zalen" class="label">Zalen:</label>
                         <div id="zalen-inputs" class="field"></div>
 
+                        <div class="field">
+                            <label for="bereikbaarheid-auto" class="label">Bereikbaarheid auto:</label>
+                            <div class="control">
+                                <textarea id="bereikbaarheid-auto" name="bereikbaarheid[auto]" class="textarea" placeholder="Bereikbaarheid auto"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="bereikbaarheid-ov" class="label">Bereikbaarheid ov:</label>
+                            <div class="control">
+                                <textarea id="bereikbaarheid-ov" name="bereikbaarheid[ov]" class="textarea" placeholder="Bereikbaarheid ov"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="bereikbaarheid-fiets" class="label">Bereikbaarheid fiets:</label>
+                            <div class="control">
+                                <textarea id="bereikbaarheid-fiets" name="bereikbaarheid[fiets]" class="textarea" placeholder="Bereikbaarheid fiets"></textarea>
+                            </div>
+                        </div>
+
                         <div class="control">
-                            <input name="submit" class="button is-primary" type="submit" value="Login">
+                            <input name="submit" class="button is-primary" type="submit" value="Maak bioscoop">
                         </div>
                     </form>
 
@@ -128,6 +168,19 @@
 </div>
 
 </section>
+
+<script>
+var file = document.querySelector("[name='images[]']");
+file.onchange = function(){
+    if(file.files.length === 1)
+    {
+      document.querySelector('#images-name').innerHTML = file.files[0].name;
+    } else if(file.files.length > 1) {
+        document.querySelector('#images-name').innerHTML = file.files.length + " bestanden geselecteerd";
+    }
+};
+
+</script>
 
 <script src="/view/assets/js/repeatingInput.js"></script>
 <script>
@@ -161,7 +214,6 @@ function tarievenInput(i) {
             </div>
         </div>
     </div>
-        
     `
 }
 
@@ -212,7 +264,6 @@ function zalenInput(i) {
         <button type="button" class="repeating-add-button button is-success"><i class="fas fa-plus"></i></button>
         <button type="button" class="repeating-remove-button button is-danger repeating-invisible"><i class="fas fa-minus"></i></button>
     </div>
-        
     `
 }
 

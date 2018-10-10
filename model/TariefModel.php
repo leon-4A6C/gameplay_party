@@ -1,6 +1,6 @@
 <?php
 
-require "DataHandler.php";
+require_once "DataHandler.php";
 
 /**
  * Tarief model class
@@ -38,6 +38,27 @@ class TariefModel {
         return $this->dataHandler->readData(
             "SELECT * FROM `tarieven` WHERE bioscopen_id = :bioscopen_id",
             [":bioscopen_id" => $biosId]
+        );
+    }
+
+    /**
+     * create tarief
+     *
+     * @param int $biosId
+     * @param string $prijs
+     * @param string $naam
+     * @param string $toeslag
+     * @return int insert id
+     */
+    public function create($biosId, $prijs, $naam, $toeslag) {
+        return $this->dataHandler->createData(
+            "INSERT INTO `tarieven`(`bioscopen_id`, `prijs`, `naam`, `toeslag`) VALUES (:bioscopen_id, :prijs, :naam, :toeslag)",
+            [
+                ":bioscopen_id" => $biosId,
+                ":prijs" => $prijs,
+                ":naam" => $naam,
+                ":toeslag" => $toeslag,
+            ]
         );
     }
 
