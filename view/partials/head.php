@@ -40,8 +40,6 @@
 
   <header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" ></script>
-
 <nav class="navbar is-dark is-fixed" style="background-color: #A3CB38; position: fixed; width: 100%;">
   <div class="navbar-brand">
     <div class="logo" style="width: 300px;">
