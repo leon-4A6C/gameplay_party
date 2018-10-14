@@ -1,13 +1,8 @@
-DROP TABLE IF EXISTS `cms`;
+INSERT INTO `roles`(`name`) VALUES
+("admin");
 
-CREATE TABLE `cms` (
-    `path` varchar(50) NOT NULL UNIQUE,
-
-    `title` varchar(25),
-    `content` TEXT,
-
-    PRIMARY KEY(`path`)
-);
+INSERT INTO `users`(`username`, `password`, `role_id`) VALUES
+("test", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 1);
 
 INSERT INTO `cms`(`title`, `path`, `content`) VALUES
 ("over ons", "overons", '

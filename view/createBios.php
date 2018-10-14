@@ -223,7 +223,7 @@ function zalenInput(i) {
 
         <div class="column">
             <div class="control">
-                <input id="zalen_${i}" name="zalen[${i}][zaalnummer]" class="input" type="text" placeholder="Zaalnummer">
+                <input id="zalen_${i}" name="zalen[${i}][zaalnummer]" class="input" type="number" placeholder="Zaalnummer">
             </div>
         </div>
 

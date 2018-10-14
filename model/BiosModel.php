@@ -51,7 +51,7 @@ class BiosModel {
      */
     public function create($naam, $straatnaam, $huisnummer, $toevoeging, $postcode, $woonplaats, $provincie, $rolstoeltoegankelijkheid, $voorwaarden, $beschrijving) {
         return $this->dataHandler->createData(
-            "INSERT INTO `bioscopen`(`bioscoop_naam`, `straatnaam`, `huisnummer`, `toevoeging`, `postcode`, `woonplaats`, `provincie`, `rolstoeltoegankelijkheid`, `voorwaarden`, `beschrijving`) VALUES (:naam, :straatnaam, :huisnummer, :toevoeging, :postcode, :woonplaats, :provincie, :rolstoeltoegankelijkheid, :voorwaarden, :beschrijving)",
+            "INSERT INTO `bioscopen`(`bioscoop_naam`, `straatnaam`, `huisnummer`, `toevoeging`, `postcode`, `woonplaats`, `provincie`, `rolstoeltoegankelijkheid`, `voorwaarden`, `beschrijving`, `users_id`) VALUES (:naam, :straatnaam, :huisnummer, :toevoeging, :postcode, :woonplaats, :provincie, :rolstoeltoegankelijkheid, :voorwaarden, :beschrijving, :user_id)",
             [
                 ":naam" => $naam,
                 ":straatnaam" => $straatnaam,
@@ -62,14 +62,23 @@ class BiosModel {
                 ":provincie" => $provincie,
                 ":rolstoeltoegankelijkheid" => $rolstoeltoegankelijkheid,
                 ":voorwaarden" => $voorwaarden,
-                ":beschrijving" => $beschrijving
+                ":beschrijving" => $beschrijving,
+                ":user_id" => 2
             ]
         );
     }
 
     public function selectHome() {
         return $this->dataHandler->readData(
-            "SELECT MIN(`zalen`.`aantal_stoelen`), `zalen`.`bioscopen_id` FROM `zalen` ORDER BY `zalen`.`aantal_stoelen`"
+            "(SELECT MIN(`zalen`.`aantal_stoelen`) as `aantal_stoelen`, `bioscopen`.`id`, `bioscopen`.`bioscoop_naam`, `bioscopen`.`beschrijving`, `afbeeldingen`.`path` FROM `zalen` INNER JOIN `bioscopen` ON `zalen`.`bioscopen_id` = `bioscopen`.`id` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bioscopen_id` = `bioscopen`.`id` LIMIT 1)
+
+            UNION ALL
+            
+            (SELECT MAX(`zalen`.`aantal_stoelen`) as `aantal_stoelen`, `bioscopen`.`id`, `bioscopen`.`bioscoop_naam`, `bioscopen`.`beschrijving`, `afbeeldingen`.`path` FROM `zalen` INNER JOIN `bioscopen` ON `zalen`.`bioscopen_id` = `bioscopen`.`id` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bioscopen_id` = `bioscopen`.`id` LIMIT 1)
+            
+            UNION ALL
+            
+            (SELECT AVG(`zalen`.`aantal_stoelen`) as `aantal_stoelen`, `bioscopen`.`id`, `bioscopen`.`bioscoop_naam`, `bioscopen`.`beschrijving`, `afbeeldingen`.`path` FROM `zalen` INNER JOIN `bioscopen` ON `zalen`.`bioscopen_id` = `bioscopen`.`id` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bioscopen_id` = `bioscopen`.`id` LIMIT 1)"
         );
     }
 

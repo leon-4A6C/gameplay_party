@@ -29,7 +29,7 @@
         <div class="home-columns-container">
         
             <div class="columns is-8 is-variable">
-                <div class="column">
+                <!-- <div class="column">
                     <div class="card hover card-equal-height">
                         <div class="card-image">
                             <figure class="image is-4by3">
@@ -79,9 +79,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
 
+                <?php foreach($bioscopen as $bioscoop): ?>
+                    <div class="column">
+                        <div class="card hover card-equal-height">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="/view/assets/images/bioscopen/<?= $bioscoop["path"] ?>" alt="<?= $bioscoop["bioscoop_naam"] ?>">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-3"><?= $bioscoop["bioscoop_naam"] ?></p>
+                                        <p><?= $bioscoop["beschrijving"] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
         
 
