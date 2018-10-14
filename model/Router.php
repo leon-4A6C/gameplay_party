@@ -58,7 +58,7 @@ class Router {
         require_once($class);
         //Create object and call method
         $obj = new $classname();
-            die(call_user_func_array(array($obj, $method),$params));
+        die(call_user_func_array(array($obj, $method),$params));
     }
 }
 

@@ -58,7 +58,7 @@ class AuthModel {
      * @param array $roles the roles that can visit the page in text
      * @return void
      */
-    public function auth(array $roles) {
+    public function auth(array $roles = null) {
         if(!$this->userModel->isLoggedIn || !$this->checkUserRole($roles))
             return $this->redirect("/login?redirect=". urlencode($_SERVER["REQUEST_URI"]));
     }
@@ -69,8 +69,13 @@ class AuthModel {
      * @param array $roles the roles that can visit the page in text
      * @return bool
      */
-    public function checkUserRole(array $roles) {
-        return in_array($this->userRole["name"], $roles);
+    public function checkUserRole(array $roles = null) {
+
+        if($roles)
+            return in_array($this->userRole["name"], $roles);
+
+        // if no roles specified all roles are okay
+        return true;
     }
 
     /**
