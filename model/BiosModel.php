@@ -67,4 +67,10 @@ class BiosModel {
         );
     }
 
+    public function selectHome() {
+        return $this->dataHandler->readData(
+            "SELECT MIN(`zalen`.`aantal_stoelen`), `zalen`.`bioscopen_id` FROM `zalen` ORDER BY `zalen`.`aantal_stoelen`"
+        );
+    }
+
 }
