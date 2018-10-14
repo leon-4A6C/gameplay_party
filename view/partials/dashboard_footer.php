@@ -4,7 +4,7 @@
     </div>
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 document.querySelectorAll("aside.menu .menu-list li a").forEach(x => {
     if(x.href === location.href) {
