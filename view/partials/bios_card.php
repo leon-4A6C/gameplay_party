@@ -1,6 +1,6 @@
 <div class="column">
     <div class="card hover card-equal-height">
-        <a href="https://kinepolis.nl/bioscopen/<?= str_replace(" ", "-", strtolower($bioscoop["bios_naam"])) ?>/info">
+        <a href="/bios/detail/<?= $bioscoop["bios_id"] ?>">
             <div class="card-image">
                 <figure class="image is-4by3">
                     <img src="/view/assets/images/bioscopen/<?= $bioscoop["afbeelding_path"] ?>" alt="<?= $bioscoop["bios_naam"] ?>">

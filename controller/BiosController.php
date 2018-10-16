@@ -33,27 +33,15 @@ class BiosController {
 
     public function overzicht() {
 
-        $data = $this->biosModel->read();
+        $bioscopen = $this->biosModel->read();
 
-        foreach ($data as $key => $value) {
-            $data[$key]["bios_id"] = "<a href=\"/bios/detail/".$value["bios_id"]."\">". $value["bios_id"] ."</a>";
-        }
-
-        $table = HTMLElements::table(
-            $data,
-            "table"
-        );
-
-        include "view/tableView.php";
+        include "view/biosOverview.php";
     }
 
-    public function detail($id) {
-        $table = HTMLElements::table(
-            $this->biosModel->read($id),
-            "table"
-        );
+    public function detail($id = 1) {
+        $bios = $this->biosModel->read($id);
 
-        include "view/tableView.php";
+        $this->authModel->redirect("https://kinepolis.nl/bioscopen/". str_replace(" ", "-", strtolower($bios["bios_naam"])) ."/info");
     }
 
     public function create() {

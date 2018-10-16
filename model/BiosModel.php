@@ -29,7 +29,7 @@ class BiosModel {
      */
     public function read($id = null) {
         if($id)
-            return $this->dataHandler->readData("SELECT * FROM `bioscopen` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bios_id` = `bioscopen`.`bios_id` GROUP BY `bioscopen`.`bios_id` WHERE `id` = :id", [":id" => $id], false);
+            return $this->dataHandler->readData("SELECT * FROM `bioscopen` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bios_id` = `bioscopen`.`bios_id` WHERE `bioscopen`.`bios_id` = :id GROUP BY `bioscopen`.`bios_id`", [":id" => $id], false);
         
         return $this->dataHandler->readData("SELECT * FROM `bioscopen` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bios_id` = `bioscopen`.`bios_id` GROUP BY `bioscopen`.`bios_id`");
     }
