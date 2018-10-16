@@ -31,13 +31,13 @@ class TariefModel {
     public function read($biosId, $id = null) {
         if($id)
             return $this->dataHandler->readData(
-                "SELECT * FROM `tarieven` WHERE bioscopen_id = :bioscopen_id AND `id` => :id",
-                [":bioscopen_id" => $biosId, ":id" => $id]
+                "SELECT * FROM `tarieven` WHERE bios_id = :bios_id AND `tarief_id` => :id",
+                [":bios_id" => $biosId, ":id" => $id]
             );
 
         return $this->dataHandler->readData(
-            "SELECT * FROM `tarieven` WHERE bioscopen_id = :bioscopen_id",
-            [":bioscopen_id" => $biosId]
+            "SELECT * FROM `tarieven` WHERE bios_id = :bios_id",
+            [":bios_id" => $biosId]
         );
     }
 
@@ -52,9 +52,9 @@ class TariefModel {
      */
     public function create($biosId, $prijs, $naam, $toeslag) {
         return $this->dataHandler->createData(
-            "INSERT INTO `tarieven`(`bioscopen_id`, `prijs`, `naam`, `toeslag`) VALUES (:bioscopen_id, :prijs, :naam, :toeslag)",
+            "INSERT INTO `tarieven`(`bios_id`, `prijs`, `naam`, `toeslag`) VALUES (:bios_id, :prijs, :naam, :toeslag)",
             [
-                ":bioscopen_id" => $biosId,
+                ":bios_id" => $biosId,
                 ":prijs" => $prijs,
                 ":naam" => $naam,
                 ":toeslag" => $toeslag,

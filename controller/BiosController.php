@@ -6,7 +6,7 @@ require "model/AuthModel.php";
 require "model/ImageModel.php";
 require "model/TariefModel.php";
 require "model/ZalenModel.php";
-require "model/BereikbaarhedenModel.php";
+require "model/BereikbaarheidModel.php";
 
 class BiosController {
 
@@ -21,7 +21,7 @@ class BiosController {
 
         $this->tariefModel = new TariefModel();
         $this->zalenModel = new ZalenModel();
-        $this->bereikbaarhedenModel = new BereikbaarhedenModel();
+        $this->bereikbaarheidModel = new BereikbaarheidModel();
     }
 
     public function home($id = null) {
@@ -110,7 +110,7 @@ class BiosController {
         }
 
         foreach ($_REQUEST["bereikbaarheid"] as $key => $bereikbaarheid) {
-            $this->bereikbaarhedenModel->create(
+            $this->bereikbaarheidModel->create(
                 $bios_id,
                 $key,
                 $bereikbaarheid

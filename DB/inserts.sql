@@ -1,4 +1,4 @@
-INSERT INTO `roles`(`id`, `name`) VALUES
+INSERT INTO `roles`(`role_id`, `role_name`) VALUES
 (1, "admin"),
 (2, "bioscoop");
 
@@ -6,7 +6,7 @@ INSERT INTO `users`(`username`, `password`, `role_id`) VALUES
 ("test", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 1),
 ("test2", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 2);
 
-INSERT INTO `cms`(`title`, `path`, `content`) VALUES
+INSERT INTO `cms`(`cms_name`, `cms_path`, `cms_content`) VALUES
 ("over ons", "overons", '
 <div class="container">
     <section class="hero">

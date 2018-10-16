@@ -14,7 +14,7 @@ class HomeController {
         $bioscopen = $this->biosModel->selectHome();
 
         foreach ($bioscopen as $key => $bioscoop) {
-            $bioscopen[$key]["beschrijving"] = substr($bioscopen[$key]["beschrijving"], 0, strpos($bioscopen[$key]["beschrijving"], ".")) . ".";
+            $bioscopen[$key]["bios_beschrijving"] = substr($bioscopen[$key]["bios_beschrijving"], 0, strpos($bioscopen[$key]["bios_beschrijving"], ".")) . ".";
         }
 
         include "view/homepagina.php";

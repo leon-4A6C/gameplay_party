@@ -1,6 +1,6 @@
 <?php include "head.php"; ?>
 <?php //shouldn't do this, but don't know a better way! ?>
-<?php $role = $this->authModel->userRole["name"]; ?>
+<?php $role = $this->authModel->userRole["role_name"]; ?>
 
 <div class="columns">
     <div class="column is-one-fifth">

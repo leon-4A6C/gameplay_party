@@ -46,7 +46,7 @@ class ImageModel {
      * @return bool
      */
     public function createImage($path, $bios_id) {
-        return $this->dataHandler->createData("INSERT INTO `afbeeldingen`(`path`, `bioscopen_id`) VALUES (:path, :bios_id)", [":path" => $path, ":bios_id" => $bios_id]);
+        return $this->dataHandler->createData("INSERT INTO `afbeeldingen`(`path`, `bios_id`) VALUES (:path, :bios_id)", [":path" => $path, ":bios_id" => $bios_id]);
     }
 
     /**
@@ -67,7 +67,7 @@ class ImageModel {
             $bindings[":path_".$key] = $value;
             $paths[$key] = "(:path_$key, :bios_id)";
         }
-        $sql = "INSERT INTO `afbeeldingen`(`path`, `bioscopen_id`) VALUES " . implode(", ", $paths);
+        $sql = "INSERT INTO `afbeeldingen`(`path`, `bios_id`) VALUES " . implode(", ", $paths);
         return $this->dataHandler->createData(
             $sql,
             $bindings

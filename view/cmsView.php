@@ -3,7 +3,7 @@
 <link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
 
 <div class="fr-view">
-    <?php echo $page["content"]; ?>
+    <?php echo $page["cms_content"]; ?>
 </div>
 
 <?php require "partials/footer.php"; ?>

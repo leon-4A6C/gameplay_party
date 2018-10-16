@@ -72,7 +72,7 @@ class AuthModel {
     public function checkUserRole(array $roles = null) {
 
         if($roles)
-            return in_array($this->userRole["name"], $roles);
+            return in_array($this->userRole["role_name"], $roles);
 
         // if no roles specified all roles are okay
         return true;

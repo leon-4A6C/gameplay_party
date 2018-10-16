@@ -34,7 +34,7 @@ class RoleModel {
         if(!$id) {
             return $this->dataHandler->readData("SELECT * FROM `roles`");
         } else {
-            return $this->dataHandler->readData("SELECT * FROM `roles` WHERE `id` = :id", [":id" => $id], false);
+            return $this->dataHandler->readData("SELECT * FROM `roles` WHERE `role_id` = :id", [":id" => $id], false);
         }
     }
 

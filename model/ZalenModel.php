@@ -28,26 +28,26 @@ class ZalenModel {
      * @param int $zaalnummer
      * @return array the query data
      */
-    public function read($biosId, $zaalnummer = null) {
+    public function read($biosId, $zaal_id = null) {
 
-        if($zaalnummer)
+        if($zaal_id)
             return $this->dataHandler->readData(
-                "SELECT * FROM `openingstijden` WHERE bioscopen_id = :bioscopen_id AND `zaalnummer` = :zaalnummer",
-                [":bioscopen_id" => $biosId, ":zaalnummer" => $zaalnummer]
+                "SELECT * FROM `openingstijden` WHERE bios_id = :bios_id AND `zaal_id` = :zaal_id",
+                [":bios_id" => $biosId, ":zaal_id" => $zaal_id]
             );
 
         return $this->dataHandler->readData(
-            "SELECT * FROM `openingstijden` WHERE bioscopen_id = :bioscopen_id",
-            [":bioscopen_id"]
+            "SELECT * FROM `openingstijden` WHERE bios_id = :bios_id",
+            [":bios_id"]
         );
     }
 
-    public function create($zaalnummer, $bioscopen_id, $aantal_stoelen, $rolstoelplaatsen, $schermgrootte, $faciliteiten, $versies) {
+    public function create($zaalnummer, $bios_id, $aantal_stoelen, $rolstoelplaatsen, $schermgrootte, $faciliteiten, $versies) {
         return $this->dataHandler->createData(
-            "INSERT INTO `zalen`(`zaalnummer`, `bioscopen_id`, `aantal_stoelen`, `rolstoelplaatsen`, `schermgrootte`, `faciliteiten`, `versies`) VALUES (:zaalnummer, :bioscopen_id, :aantal_stoelen, :rolstoelplaatsen, :schermgrootte, :faciliteiten, :versies)",
+            "INSERT INTO `zalen`(`zaalnummer`, `bios_id`, `aantal_stoelen`, `rolstoelplaatsen`, `schermgrootte`, `faciliteiten`, `versies`) VALUES (:zaalnummer, :bios_id, :aantal_stoelen, :rolstoelplaatsen, :schermgrootte, :faciliteiten, :versies)",
             [
                 ":zaalnummer" => $zaalnummer,
-                ":bioscopen_id" => $bioscopen_id,
+                ":bios_id" => $bios_id,
                 ":aantal_stoelen" => $aantal_stoelen,
                 ":rolstoelplaatsen" => $rolstoelplaatsen,
                 ":schermgrootte" => $schermgrootte,

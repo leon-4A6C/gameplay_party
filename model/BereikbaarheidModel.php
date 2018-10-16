@@ -3,9 +3,9 @@
 require_once "DataHandler.php";
 
 /**
- * Bereikbaarheden model class
+ * BereikbaarhedenModel model class
  */
-class BereikbaarhedenModel {
+class BereikbaarheidModel {
 
     /**
      * data handler
@@ -22,23 +22,23 @@ class BereikbaarhedenModel {
     }
 
     /**
-     * read bereikbaarheden
+     * read Bereikbaarheid
      *
      * @param int $biosId
      * @return array the query data
      */
     public function read($biosId) {
         return $this->dataHandler->readData(
-            "SELECT * FROM `bereikbaarheden` WHERE bioscopen_id = :bioscopen_id",
-            [":bioscopen_id" => $biosId]
+            "SELECT * FROM `bereikbaarheid` WHERE bios_id = :bios_id",
+            [":bios_id" => $biosId]
         );
     }
 
-    public function create($bioscopen_id, $naam, $content) {
+    public function create($bios_id, $naam, $content) {
         return $this->dataHandler->createData(
-            "INSERT INTO `bereikbaarheden`(`bioscopen_id`, `naam`, `content`) VALUES (:bioscopen_id, :naam, :content)",
+            "INSERT INTO `bereikbaarheid`(`bios_id`, `bereikbaarheid_naam`, `bereikbaarheid_content`) VALUES (:bios_id, :naam, :content)",
             [
-                ":bioscopen_id" => $bioscopen_id,
+                ":bios_id" => $bios_id,
                 ":naam" => $naam,
                 ":content" => $content
             ]
