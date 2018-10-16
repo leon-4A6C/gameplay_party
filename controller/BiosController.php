@@ -36,7 +36,7 @@ class BiosController {
         $data = $this->biosModel->read();
 
         foreach ($data as $key => $value) {
-            $data[$key]["id"] = "<a href=\"/bios/detail/".$value["id"]."\">". $value["id"] ."</a>";
+            $data[$key]["bios_id"] = "<a href=\"/bios/detail/".$value["bios_id"]."\">". $value["bios_id"] ."</a>";
         }
 
         $table = HTMLElements::table(

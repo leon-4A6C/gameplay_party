@@ -32,12 +32,12 @@ class ZalenModel {
 
         if($zaal_id)
             return $this->dataHandler->readData(
-                "SELECT * FROM `openingstijden` WHERE bios_id = :bios_id AND `zaal_id` = :zaal_id",
+                "SELECT * FROM `zalen` WHERE bios_id = :bios_id AND `zaal_id` = :zaal_id",
                 [":bios_id" => $biosId, ":zaal_id" => $zaal_id]
             );
 
         return $this->dataHandler->readData(
-            "SELECT * FROM `openingstijden` WHERE bios_id = :bios_id",
+            "SELECT * FROM `zalen` WHERE bios_id = :bios_id",
             [":bios_id"]
         );
     }

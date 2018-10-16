@@ -33,7 +33,7 @@ class ImageModel {
      */
     public function read($id = null) {
         if($id)
-            return $this->dataHandler->readData("SELECT * FROM `afbeeldingen` WHERE `id` = :id", [":id" => $id], false);
+            return $this->dataHandler->readData("SELECT * FROM `afbeeldingen` WHERE `afbeelding_id` = :afbeelding_id", [":afbeelding_id" => $id], false);
 
         return $this->dataHandler->readData("SELECT * FROM `afbeeldingen`");
     }
@@ -46,7 +46,7 @@ class ImageModel {
      * @return bool
      */
     public function createImage($path, $bios_id) {
-        return $this->dataHandler->createData("INSERT INTO `afbeeldingen`(`path`, `bios_id`) VALUES (:path, :bios_id)", [":path" => $path, ":bios_id" => $bios_id]);
+        return $this->dataHandler->createData("INSERT INTO `afbeeldingen`(`afbeelding_path`, `bios_id`) VALUES (:path, :bios_id)", [":path" => $path, ":bios_id" => $bios_id]);
     }
 
     /**
@@ -67,7 +67,7 @@ class ImageModel {
             $bindings[":path_".$key] = $value;
             $paths[$key] = "(:path_$key, :bios_id)";
         }
-        $sql = "INSERT INTO `afbeeldingen`(`path`, `bios_id`) VALUES " . implode(", ", $paths);
+        $sql = "INSERT INTO `afbeeldingen`(`afbeelding_path`, `bios_id`) VALUES " . implode(", ", $paths);
         return $this->dataHandler->createData(
             $sql,
             $bindings
