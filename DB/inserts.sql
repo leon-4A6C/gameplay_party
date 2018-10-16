@@ -1,10 +1,12 @@
 INSERT INTO `roles`(`role_id`, `role_name`) VALUES
 (1, "admin"),
-(2, "bioscoop");
+(2, "bioscoop"),
+(3, "redacteur");
 
 INSERT INTO `users`(`username`, `password`, `role_id`) VALUES
 ("test", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 1),
-("test2", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 2);
+("test2", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 2),
+("test3", "$2y$10$hRGDvVyEgqMv.gBMKHlpauW/Vzzu/dK/qwJs7.J4KElDfMII1C0nu", 3);
 
 INSERT INTO `cms`(`cms_name`, `cms_path`, `cms_content`) VALUES
 ("over ons", "overons", '

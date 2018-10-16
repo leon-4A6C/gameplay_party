@@ -145,6 +145,15 @@
                     </div>
                 </div>
 
+                <?php if(in_array($role, ["admin", "redacteur"])): ?>
+                <div class="field">
+                    <label for="bios_username" class="label">Bios gebruikersnaam:</label>
+                    <div class="control">
+                        <input id="bios_username" name="bios_username" class="input" type="text" placeholder="Naam" required>
+                    </div>
+                </div>
+                <?php endif; ?>
+
                 <div class="control">
                     <input name="submit" class="button is-primary" type="submit" value="Maak bioscoop">
                 </div>

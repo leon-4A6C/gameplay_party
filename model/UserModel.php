@@ -114,4 +114,15 @@ class UserModel {
         return false;
     }
 
+    public function create($username, $password, $role_id) {
+        return $this->dataHandler->createData(
+            "INSERT INTO `users`(`username`, `password`, `role_id`) VALUES (:username, :password, :role_id)",
+            [
+                ":username" => $username,
+                ":password" => $this->generatePassword($password),
+                ":role_id" => $role_id
+            ]
+        );
+    }
+
 }

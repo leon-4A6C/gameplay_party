@@ -35,6 +35,16 @@ class BiosModel {
     }
 
     /**
+     * reads a bios from a user_id
+     *
+     * @param int $user_id
+     * @return array the query data
+     */
+    public function readFromUser($user_id) {
+        return $this->dataHandler->readData("SELECT * FROM `bioscopen` WHERE `user_id` = :user_id", [":user_id" => $user_id], false);
+    }
+
+    /**
      * creates a bioscoop
      *
      * @param string $naam
@@ -49,9 +59,9 @@ class BiosModel {
      * @param string $beschrijving
      * @return int insert id
      */
-    public function create($naam, $straatnaam, $huisnummer, $toevoeging, $postcode, $woonplaats, $provincie, $rolstoeltoegankelijkheid, $voorwaarden, $beschrijving) {
+    public function create($naam, $straatnaam, $huisnummer, $toevoeging, $postcode, $woonplaats, $provincie, $rolstoeltoegankelijkheid, $voorwaarden, $beschrijving, $user_id) {
         return $this->dataHandler->createData(
-            "INSERT INTO `bioscopen`(`bios_naam`, `bios_straatnaam`, `bios_huisnummer`, `bios_toevoeging`, `bios_postcode`, `bios_woonplaats`, `bios_provincie`, `bios_rolstoeltoegankelijkheid`, `bios_voorwaarden`, `bios_beschrijving`) VALUES (:naam, :straatnaam, :huisnummer, :toevoeging, :postcode, :woonplaats, :provincie, :rolstoeltoegankelijkheid, :voorwaarden, :beschrijving)",
+            "INSERT INTO `bioscopen`(`bios_naam`, `bios_straatnaam`, `bios_huisnummer`, `bios_toevoeging`, `bios_postcode`, `bios_woonplaats`, `bios_provincie`, `bios_rolstoeltoegankelijkheid`, `bios_voorwaarden`, `bios_beschrijving`, `user_id`) VALUES (:naam, :straatnaam, :huisnummer, :toevoeging, :postcode, :woonplaats, :provincie, :rolstoeltoegankelijkheid, :voorwaarden, :beschrijving, :user_id)",
             [
                 ":naam" => $naam,
                 ":straatnaam" => $straatnaam,
@@ -62,7 +72,8 @@ class BiosModel {
                 ":provincie" => $provincie,
                 ":rolstoeltoegankelijkheid" => $rolstoeltoegankelijkheid,
                 ":voorwaarden" => $voorwaarden,
-                ":beschrijving" => $beschrijving
+                ":beschrijving" => $beschrijving,
+                ":user_id" => $user_id
             ]
         );
     }

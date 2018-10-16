@@ -52,7 +52,7 @@
                             <a>Bioscoop</a>
                             <ul class="is-hidden">
                                 <li><a href="/bios/create">Toevoegen</a></li>
-                                <!-- <li><a href="/bios/time">Tijden aangeven</a></li> -->
+                                <li><a href="/bios/tijden">Tijden aangeven</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -61,15 +61,12 @@
 
                 <!-- user -->
                 <?php if(in_array($role, ["admin", "redacteur"])): ?>
-                    <p class="menu-label">Gebruikers</p>
                     <ul class="menu-list">
                         <li>
-                            <a>Bioscoop</a>
+                            <a>Gebruikers</a>
                             <ul class="is-hidden">
-                                <li><a href="/users">Overzicht</a></li>
-                                <li><a href="/users/create">Toevoegen</a></li>
-                                <li><a href="/users/update">Wijzigen</a></li>
-                                <li><a href="/users/delete">Verwijderen</a></li>
+                                <!-- <li><a href="/users">Overzicht</a></li> -->
+                                <li><a href="/users/bioscreate">Toevoegen</a></li>
                             </ul>
                         </li>
                     </ul>

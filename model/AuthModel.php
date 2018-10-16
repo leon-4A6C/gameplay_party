@@ -85,7 +85,7 @@ class AuthModel {
      * @return void
      */
     public function redirect(string $url) {
-        return header("Location: $url");
+        return die(header("Location: $url"));
     }
 
 }

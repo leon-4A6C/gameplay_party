@@ -6,6 +6,8 @@ require "model/AuthModel.php";
 require "model/ImageModel.php";
 require "model/TariefModel.php";
 require "model/ZalenModel.php";
+require_once "model/UserModel.php";
+require "model/TijdenModel.php";
 require "model/BereikbaarheidModel.php";
 
 class BiosController {
@@ -15,6 +17,9 @@ class BiosController {
     public function __construct() {
         $this->biosModel = new BiosModel();
         $this->authModel = new AuthModel();
+        $this->userModel = new UserModel();
+
+        $this->tijdenModel = new TijdenModel();
 
         $this->imageModel = new ImageModel();
         $this->uploadHandler = new UploadHandler(APP_DIR . "/view/assets/images/bioscopen");
@@ -46,6 +51,7 @@ class BiosController {
 
     public function create() {
         $this->authModel->auth(["admin", "bioscoop"]);
+
         include "view/createBios.php";
     }
 
@@ -54,6 +60,14 @@ class BiosController {
 
         if(!isset($_REQUEST["submit"]))
             $this->authModel->redirect("/bios/create");
+
+        $user_id = $this->authModel->userModel->user["user_id"];
+        if(isset($_REQUEST["bios_username"])) {
+            $user = $this->userModel->read($_REQUEST["bios_username"]);
+            if($user) {
+                $user_id = $user["user_id"];
+            }
+        }
 
         $bios_id = $this->biosModel->create(
             $_REQUEST["bioscoop_naam"],
@@ -65,7 +79,8 @@ class BiosController {
             $_REQUEST["provincie"],
             $_REQUEST["rolstoeltoegankelijkheid"],
             $_REQUEST["voorwaarden"],
-            $_REQUEST["beschrijving"]
+            $_REQUEST["beschrijving"],
+            $user_id
         );
 
         $paths = $this->uploadHandler->uploadImages($_FILES["images"]);
@@ -105,6 +120,38 @@ class BiosController {
             );
         }
 
+    }
+
+    public function tijden() {
+        $this->authModel->auth(["bioscoop"]);
+
+        $this->authModel->auth(["bioscoop"]);
+
+        $user = $this->authModel->userModel->user;
+
+        $bios = $this->biosModel->readFromUser($user["user_id"]);
+
+        if(!$bios)
+            $this->authModel->redirect("/bios/create");
+
+        $zalen = $this->zalenModel->read($bios["bios_id"]);
+
+        include "view/biosTijden.php";
+    }
+
+    public function tijdenAdd() {
+        $this->authModel->auth(["bioscoop"]);
+
+        echo "<pre>";
+        var_dump($_REQUEST["tijden"]);
+
+        foreach ($_REQUEST["tijden"] as $tijd) {
+            $this->tijdenModel->create(
+                $_REQUEST["zaal_id"],
+                $tijd["begintijd"],
+                $tijd["eindtijd"]
+            );
+        }
     }
 
 }
