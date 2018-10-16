@@ -2,6 +2,8 @@
 <?php //shouldn't do this, but don't know a better way! ?>
 <?php $role = $this->authModel->userRole["role_name"]; ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 <div class="columns">
     <div class="column is-one-fifth">
         <nav>
