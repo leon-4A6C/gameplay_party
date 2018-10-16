@@ -41,7 +41,6 @@ class TijdenModel {
             "SELECT * FROM `tijden` WHERE zaal_id = :zaal_id",
             [
                 ":zaal_id" => $zaal_id,
-                ":tijd_id" => $tijd_id,
             ]
         );
     }
