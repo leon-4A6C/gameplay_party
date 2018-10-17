@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-<div class="columns" style="margin-top: 15em;">
+<div class="columns">
     <div class="column is-one-fifth">
         <nav>
             <aside class="menu">
