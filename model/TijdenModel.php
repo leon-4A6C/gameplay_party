@@ -30,15 +30,23 @@ class TijdenModel {
     public function read($zaal_id, $tijd_id = null) {
         if($tijd_id)
             return $this->dataHandler->readData(
-                "SELECT * FROM `tijden` WHERE zaal_id = :zaal_id AND tijd_id = :tijd_id",
+                "SELECT * FROM `tijden` WHERE tijd_id = :tijd_id",
                 [
-                    ":zaal_id" => $zaal_id,
                     ":tijd_id" => $tijd_id,
-                ]
+                ], false
             );
 
         return $this->dataHandler->readData(
             "SELECT * FROM `tijden` WHERE zaal_id = :zaal_id",
+            [
+                ":zaal_id" => $zaal_id,
+            ]
+        );
+    }
+
+    public function readAvailableTimes($zaal_id) {
+        return $this->dataHandler->readData(
+            "SELECT * FROM `tijden` WHERE zaal_id = :zaal_id AND `tijd_id` NOT IN (SELECT reservering_tijd FROM `reservering`)",
             [
                 ":zaal_id" => $zaal_id,
             ]

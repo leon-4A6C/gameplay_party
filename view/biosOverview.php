@@ -6,7 +6,7 @@
         
         <div class="home-columns-container">
         
-            <div class="columns is-8 is-variable">
+            <div class="columns">
                 <?php foreach($bioscopen as $bioscoop): ?>
                     <?php include "partials/bios_card.php"; ?>
                 <?php endforeach; ?>

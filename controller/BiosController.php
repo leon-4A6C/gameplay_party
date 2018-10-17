@@ -40,6 +40,10 @@ class BiosController {
 
         $bioscopen = $this->biosModel->read();
 
+        foreach ($bioscopen as $key => $bioscoop) {
+            $bioscopen[$key]["bios_beschrijving"] = substr($bioscopen[$key]["bios_beschrijving"], 0, strpos($bioscopen[$key]["bios_beschrijving"], ".")) . ".";
+        }
+
         include "view/biosOverview.php";
     }
 

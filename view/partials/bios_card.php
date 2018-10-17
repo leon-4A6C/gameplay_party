@@ -1,4 +1,4 @@
-<div class="column">
+<div class="column is-4">
     <div class="card hover card-equal-height">
         <a href="/bios/detail/<?= $bioscoop["bios_id"] ?>">
             <div class="card-image">

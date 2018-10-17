@@ -5,7 +5,7 @@ require_once "DataHandler.php";
 /**
  * klant model class
  */
-class KlantModel {
+class KlantenModel {
 
     /**
      * data handler
@@ -61,10 +61,11 @@ class KlantModel {
         $klant_postcode,
         $klant_woonplaats,
         $klant_provincie,
-        $klant_telefoonnummer
+        $klant_telefoonnummer,
+        $klant_email
     ) {
         return $this->dataHandler->createData(
-            "INSERT INTO `klanten`(`klant_geslacht`, `klant_voorletter`, `klant_achternaam`, `klant_straatnaam`, `klant_huisnummer`, `klant_toevoeging`, `klant_postcode`, `klant_woonplaats`, `klant_provincie`, `klant_telefoonnummer`) VALUES (:klant_geslacht, :klant_voorletter, :klant_achternaam, :klant_straatnaam, :klant_huisnummer, :klant_toevoeging, :klant_postcode, :klant_woonplaats, :klant_provincie, :klant_telefoonnummer)",
+            "INSERT INTO `klanten`(`klant_geslacht`, `klant_voorletter`, `klant_achternaam`, `klant_straatnaam`, `klant_huisnummer`, `klant_toevoeging`, `klant_postcode`, `klant_woonplaats`, `klant_provincie`, `klant_telefoonnummer`, `klant_email`) VALUES (:klant_geslacht, :klant_voorletter, :klant_achternaam, :klant_straatnaam, :klant_huisnummer, :klant_toevoeging, :klant_postcode, :klant_woonplaats, :klant_provincie, :klant_telefoonnummer, :klant_email)",
             [
                 ":klant_geslacht" => $klant_geslacht,
                 ":klant_voorletter" => $klant_voorletter,
@@ -75,7 +76,8 @@ class KlantModel {
                 ":klant_postcode" => $klant_postcode,
                 ":klant_woonplaats" => $klant_woonplaats,
                 ":klant_provincie" => $klant_provincie,
-                ":klant_telefoonnummer" => $klant_telefoonnummer
+                ":klant_telefoonnummer" => $klant_telefoonnummer,
+                ":klant_email" => $klant_email
             ]
         );
     }
