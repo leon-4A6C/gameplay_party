@@ -52,7 +52,9 @@
                             <a>Bioscoop</a>
                             <ul class="is-hidden">
                                 <li><a href="/bios/create">Toevoegen</a></li>
-                                <li><a href="/bios/tijden">Tijden aangeven</a></li>
+                                <?php if(in_array($role, ["bioscoop"])): ?>
+                                    <li><a href="/bios/tijden">Tijden aangeven</a></li>
+                                <?php endif; ?>
                             </ul>
                         </li>
                     </ul>

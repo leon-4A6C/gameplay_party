@@ -149,7 +149,7 @@
                 <div class="field">
                     <label for="bios_username" class="label">Bios gebruikersnaam:</label>
                     <div class="control">
-                        <input id="bios_username" name="bios_username" class="input" type="text" placeholder="Naam" required>
+                        <input id="bios_username" name="bios_username" class="input" type="text" placeholder="Gebruikersnaam" required>
                     </div>
                 </div>
                 <?php endif; ?>
