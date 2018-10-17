@@ -48,7 +48,6 @@
       </a>
 
     </div>
-  </div>
 </nav>
 <div class="logo" style="position: fixed; z-index: 100; top: 52px;">
   <img src="/view\assets\images\gpp.svg" alt="#">
