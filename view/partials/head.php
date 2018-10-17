@@ -43,9 +43,9 @@
       <a class="navbar-item" href="/contact">
         Contact
       </a>
-      <a class="navbar-item">
-        <input class="input is-rounded" name="search" placeholder="Zoeken">
-      </a>
+     <!-- <a class="navbar-item">
+       <input class="input is-rounded" name="search" placeholder="Zoeken">
+      </a> -->
 
     </div>
 </nav>
@@ -80,4 +80,4 @@
 });
     </script>
 </header>
-<main style="margin-top: 15em;">
+<main style="margin-top: 17em;">
