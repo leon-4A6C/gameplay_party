@@ -146,9 +146,6 @@ class BiosController {
     public function tijdenAdd() {
         $this->authModel->auth(["bioscoop"]);
 
-        echo "<pre>";
-        var_dump($_REQUEST["tijden"]);
-
         foreach ($_REQUEST["tijden"] as $tijd) {
             $this->tijdenModel->create(
                 $_REQUEST["zaal_id"],
@@ -156,6 +153,8 @@ class BiosController {
                 $tijd["eindtijd"]
             );
         }
+
+        $this->authModel->redirect("/bios/tijden?success");
     }
 
 }

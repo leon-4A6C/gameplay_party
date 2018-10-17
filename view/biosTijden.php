@@ -2,6 +2,12 @@
 
 <section class="section">
 
+    <?php if(isset($_GET["success"])): ?>
+    <div class="notification is-success">
+        tijden succesvol toegevoegd!
+    </div>
+    <?php endif; ?>
+
     <div class="card">
         <header class="card-header">
             <h2 class="card-header-title">
