@@ -8,9 +8,9 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.5/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
 <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.5/css/froala_style.min.css' rel='stylesheet' type='text/css' />
  
-<form action="/cms/save/<?php echo $page["path"]; ?>" method="post">
+<form action="/cms/save/<?php echo $page["cms_path"]; ?>" method="post">
     <textarea name="content" id="froala-editor">
-        <?php echo $page["content"]; ?>
+        <?php echo $page["cms_content"]; ?>
     </textarea>
     <section class="section">
         <div class="container">
