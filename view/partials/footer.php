@@ -1,5 +1,5 @@
 </main>
-<footer class="footer" style="background-color: #34495e;">
+<footer class="footer" style="background-color: #A3CB38;">
   <div class="content has-text-centered" style="color: white;">
     <div>
       <strong>Gameplay Party</strong> by Peter Piper.</br> Copyright © 2018 - Gameplay Party
