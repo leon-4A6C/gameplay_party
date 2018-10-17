@@ -17,6 +17,7 @@
         </div>
         <div class="card-footer">
             <a href="/reserveer/bios/<?= $bioscoop["bios_id"] ?>" class="card-footer-item is-primary">Reserveer</a>
+            <a href="/bios/detail/<?= $bioscoop["bios_id"] ?>" class="card-footer-item is-secondary">Info</a>
         </div>
     </div>
 </div>
