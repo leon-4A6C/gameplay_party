@@ -19,7 +19,7 @@
      gtag('config', 'UA-127217039-1');
    </script>
 
-  <header style="position: fixed; width: 100%; z-index: 100;">
+  <header style="position: fixed; width: 100%; z-index: 100; top: 0;">
 
 <nav class="navbar is-dark" style="background-color: #A3CB38; width: 100%;">
   <div class="navbar-brand">

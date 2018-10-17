@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-<div class="columns">
+<div class="columns" style="margin-top: 15em;">
     <div class="column is-one-fifth">
         <nav>
             <aside class="menu">
@@ -16,28 +16,20 @@
                 <?php if(in_array($role, ["bioscoop", "admin"])): ?>
                     <p class="menu-label">Bioscoop</p>
                     <ul class="menu-list">
-                        <li>
-                            <a>Bioscoop</a>
-                            <ul class="is-hidden">
-                                <li><a href="/bios/create">Toevoegen</a></li>
-                                <?php if(in_array($role, ["bioscoop"])): ?>
-                                    <li><a href="/bios/tijden">Tijden aangeven</a></li>
-                                <?php endif; ?>
-                            </ul>
-                        </li>
+                        <li><a href="/bios/create">Toevoegen</a></li>
+                        <?php if(in_array($role, ["bioscoop"])): ?>
+                            <li><a href="/bios/tijden">Tijden aangeven</a></li>
+                        <?php endif; ?>
                     </ul>
                 <?php endif; ?>
                 <!-- end bioscoop -->
 
                 <!-- user -->
                 <?php if(in_array($role, ["admin", "redacteur"])): ?>
+                    <p class="menu-label">Gebruikers</p>
                     <ul class="menu-list">
                         <li>
-                            <a>Gebruikers</a>
-                            <ul class="is-hidden">
-                                <!-- <li><a href="/users">Overzicht</a></li> -->
-                                <li><a href="/users/bioscreate">Toevoegen</a></li>
-                            </ul>
+                            <a href="/users/create">Toevoegen</a>
                         </li>
                     </ul>
                 <?php endif; ?>
