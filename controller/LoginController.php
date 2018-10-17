@@ -25,8 +25,8 @@ class LoginController {
         if(isset($_GET["redirect"]))
             return $this->authModel->redirect($_GET["redirect"]);
         
-        // go somewhere
-        $this->authModel->redirect("/login/securePage");
+        //goto dashboard
+        $this->authModel->redirect("/admin");
     }
 
     // example
