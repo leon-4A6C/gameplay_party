@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2018 at 07:01 AM
+-- Generation Time: Oct 17, 2018 at 09:38 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -131,8 +131,30 @@ CREATE TABLE `klanten` (
   `klant_postcode` char(6) COLLATE utf8mb4_unicode_ci NOT NULL,
   `klant_woonplaats` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `klant_provincie` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `klant_telefoonnummer` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
+  `klant_telefoonnummer` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `klant_email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `klanten`
+--
+
+INSERT INTO `klanten` (`klant_id`, `klant_geslacht`, `klant_voorletter`, `klant_achternaam`, `klant_straatnaam`, `klant_huisnummer`, `klant_toevoeging`, `klant_postcode`, `klant_woonplaats`, `klant_provincie`, `klant_telefoonnummer`, `klant_email`) VALUES
+(1, 0, 'a', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', ''),
+(2, 0, 'a', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', ''),
+(3, 0, 'a', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', ''),
+(4, 1, 'l.r.', 'Veld', 'awd', 12, '', '2345ad', 'awdawd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(5, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(6, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(7, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(8, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(9, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(10, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(11, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(12, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(13, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(14, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com'),
+(15, 0, 'l.r.', 'awd', 'awd', 12, '', '3446xd', 'awd', 'awd', '0612345678', 'leon3110l@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -147,6 +169,25 @@ CREATE TABLE `reservering` (
   `klant_id` int(10) UNSIGNED NOT NULL,
   `zaal_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reservering`
+--
+
+INSERT INTO `reservering` (`reservering_id`, `datum`, `reservering_tijd`, `klant_id`, `zaal_id`) VALUES
+(1, '2018-10-17 08:41:00', 1, 3, 1),
+(2, '2018-10-17 08:51:50', 1, 4, 1),
+(3, '2018-10-17 09:01:23', 1, 5, 1),
+(4, '2018-10-17 09:02:20', 1, 6, 1),
+(5, '2018-10-17 09:02:24', 1, 7, 1),
+(6, '2018-10-17 09:05:26', 1, 8, 1),
+(7, '2018-10-17 09:05:37', 1, 9, 1),
+(8, '2018-10-17 09:05:57', 1, 10, 1),
+(9, '2018-10-17 09:06:03', 1, 11, 1),
+(10, '2018-10-17 09:06:23', 1, 12, 1),
+(11, '2018-10-17 09:06:50', 1, 13, 1),
+(12, '2018-10-17 09:06:55', 1, 14, 1),
+(13, '2018-10-17 09:07:35', 1, 15, 1);
 
 -- --------------------------------------------------------
 
@@ -220,7 +261,8 @@ CREATE TABLE `tijden` (
 --
 
 INSERT INTO `tijden` (`tijd_id`, `begindatum`, `einddatum`, `zaal_id`) VALUES
-(1, '2018-10-18 20:00:00', '2018-10-18 23:00:00', 1);
+(1, '2018-10-18 20:00:00', '2018-10-18 23:00:00', 1),
+(2, '2018-10-17 14:00:00', '2018-10-17 17:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -389,13 +431,13 @@ ALTER TABLE `cms`
 -- AUTO_INCREMENT for table `klanten`
 --
 ALTER TABLE `klanten`
-  MODIFY `klant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `klant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `reservering`
 --
 ALTER TABLE `reservering`
-  MODIFY `reservering_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `reservering_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -413,7 +455,7 @@ ALTER TABLE `tarieven`
 -- AUTO_INCREMENT for table `tijden`
 --
 ALTER TABLE `tijden`
-  MODIFY `tijd_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `tijd_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
