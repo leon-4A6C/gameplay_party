@@ -43,9 +43,9 @@
       <a class="navbar-item" href="/contact">
         Contact
       </a>
-      <a class="navbar-item">
-        <input class="input is-rounded" name="search" placeholder="Zoeken">
-      </a>
+     <!-- <a class="navbar-item">
+       <input class="input is-rounded" name="search" placeholder="Zoeken">
+      </a> -->
 
     </div>
 </nav>
