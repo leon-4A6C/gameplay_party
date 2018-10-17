@@ -40,7 +40,7 @@
       <a class="navbar-item" href="/cms/overons">
         Over ons
       </a>
-      <a class="navbar-item" href="/cms/contact">
+      <a class="navbar-item" href="/contact">
         Contact
       </a>
       <a class="navbar-item">
