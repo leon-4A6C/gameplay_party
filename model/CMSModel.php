@@ -33,6 +33,13 @@ class CMSModel {
         return $this->dataHandler->readData("SELECT * FROM `cms` WHERE `cms_path` = :path", [":path" => $path], false);
     }
 
+    /**
+     * updates a cms page
+     *
+     * @param string $path the path of the cms page
+     * @param string $content the page content
+     * @return void
+     */
     public function update($path, $content) {
         return $this->dataHandler->UpdateData(
             "UPDATE `cms` SET `cms_content` = :content WHERE `cms_path` = :path",

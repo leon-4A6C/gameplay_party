@@ -3,11 +3,28 @@
 require "model/CMSModel.php";
 require "model/AuthModel.php";
 
+/**
+ * the cms controller
+ */
 class CmsController {
 
+    /**
+     * the cms model
+     *
+     * @var CMSModel
+     */
     public $cmsModel;
+
+    /**
+     * the authModel
+     *
+     * @var authModel
+     */
     public $authModel;
 
+    /**
+     * the constructor
+     */
     public function __construct() {
         $this->cmsModel = new CMSModel();
         $this->authModel = new AuthModel();
@@ -29,6 +46,12 @@ class CmsController {
         include "view/cmsView.php";
     }
 
+    /**
+     * shows the edit cms page view
+     *
+     * @param string $pagePath path of the page of the cms
+     * @return void
+     */
     function edit($pagePath = null) {
         $this->authModel->auth(["admin", "redacteur"]);
 
@@ -44,6 +67,12 @@ class CmsController {
 
     }
 
+    /**
+     * processes the page edit form
+     *
+     * @param string $pagePath path of the page of the cms
+     * @return void
+     */
     public function save($pagePath = null) {
         $this->authModel->auth(["admin", "redacteur"]);
 

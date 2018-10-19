@@ -36,6 +36,14 @@ class ReserveringModel {
         );
     }
 
+    /**
+     * creates a reservering
+     *
+     * @param int $reservering_tijd the reservering_id
+     * @param int $klant_id the klant_id
+     * @param int $zaal_id the zaal_id
+     * @return int reservering id
+     */
     public function create($reservering_tijd, $klant_id, $zaal_id) {
         return $this->dataHandler->createData(
             "INSERT INTO `reservering`(`reservering_tijd`, `klant_id`, `zaal_id`) VALUES (:reservering_tijd, :klant_id, :zaal_id)",

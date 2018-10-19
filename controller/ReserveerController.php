@@ -6,10 +6,49 @@ require "model/ZalenModel.php";
 require "model/ReserveringModel.php";
 require "model/KlantenModel.php";
 
+/**
+ * the reserveer controller
+ */
 class ReserveerController {
 
+    /**
+     * the bios model
+     *
+     * @var BiosModel
+     */
     public $biosModel;
 
+    /**
+     * the tijden model
+     *
+     * @var TijdenModel
+     */
+    public $tijdenModel;
+
+    /**
+     * the reservering model
+     *
+     * @var ReserveringModel
+     */
+    public $reserveringModel;
+
+    /**
+     * the klanten model
+     *
+     * @var KlantenModel
+     */
+    public $klantenModel;
+
+    /**
+     * the zalen model
+     *
+     * @var ZalenModel
+     */
+    public $zalenModel;
+
+    /**
+     * the constructor
+     */
     public function __construct() {
         $this->biosModel = new BiosModel();
         $this->tijdenModel = new TijdenModel();
@@ -18,6 +57,12 @@ class ReserveerController {
         $this->zalenModel = new ZalenModel();
     }
 
+    /**
+     * bios reservering form
+     *
+     * @param int $bios_id the bios you want
+     * @return void
+     */
     public function bios($bios_id) {
 
         $bios = $this->biosModel->read($bios_id);
@@ -32,6 +77,11 @@ class ReserveerController {
 
     }
 
+    /**
+     * processes the reserveer form
+     *
+     * @return void
+     */
     public function reserveer() {
 
         $klant_id = $this->klantenModel->create(

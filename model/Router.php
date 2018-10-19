@@ -5,6 +5,9 @@
  */
 class Router {
 
+    /**
+     * the constructor
+     */
     public function __construct()
     {
         $url = $_SERVER['REQUEST_URI'];

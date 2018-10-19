@@ -10,10 +10,70 @@ require_once "model/UserModel.php";
 require "model/TijdenModel.php";
 require "model/BereikbaarheidModel.php";
 
+/**
+ * the controller for the bios
+ */
 class BiosController {
 
+    /**
+     * the bios model
+     *
+     * @var BiosModel
+     */
     public $biosModel;
 
+    /**
+     * the auth model
+     *
+     * @var AuthModel
+     */
+    public $authModel;
+
+    /**
+     * the user model
+     *
+     * @var UserModel
+     */
+    public $userModel;
+
+    /**
+     * the tijden model
+     *
+     * @var TijdenModel
+     */
+    public $tijdenModel;
+
+    /**
+     * the upload handler
+     *
+     * @var UploadHandler
+     */
+    public $uploadHandler;
+
+    /**
+     * the tariefModel
+     *
+     * @var TariefModel
+     */
+    public $tariefModel;
+
+    /**
+     * the zalen model
+     *
+     * @var ZalenModel
+     */
+    public $zalenModel;
+
+    /**
+     * the bereikbaarheid model
+     *
+     * @var BereikbaarheidModel
+     */
+    public $bereikbaarheidModel;
+
+    /**
+     * constructor
+     */
     public function __construct() {
         $this->biosModel = new BiosModel();
         $this->authModel = new AuthModel();
@@ -29,6 +89,12 @@ class BiosController {
         $this->bereikbaarheidModel = new BereikbaarheidModel();
     }
 
+    /**
+     * the home is the default
+     *
+     * @param int $id bios id
+     * @return void
+     */
     public function home($id = null) {
         if(!$id)
             return $this->overzicht();
@@ -36,6 +102,11 @@ class BiosController {
         $this->detail($id);
     }
 
+    /**
+     * shows the bios overview
+     *
+     * @return void
+     */
     public function overzicht() {
 
         $bioscopen = $this->biosModel->read();
@@ -47,18 +118,34 @@ class BiosController {
         include "view/biosOverview.php";
     }
 
+    /**
+     * bios detail page
+     *
+     * @param integer $id bios id
+     * @return void
+     */
     public function detail($id = 1) {
         $bios = $this->biosModel->read($id);
 
         $this->authModel->redirect("https://kinepolis.nl/bioscopen/". str_replace(" ", "-", strtolower($bios["bios_naam"])) ."/info");
     }
 
+    /**
+     * bios add form
+     *
+     * @return void
+     */
     public function create() {
         $this->authModel->auth(["admin", "bioscoop"]);
 
         include "view/createBios.php";
     }
 
+    /**
+     * processes the bios add form
+     *
+     * @return void
+     */
     public function add() {
         $this->authModel->auth(["admin", "bioscoop"]);
 
@@ -126,6 +213,11 @@ class BiosController {
 
     }
 
+    /**
+     * shows bios time form
+     *
+     * @return void
+     */
     public function tijden() {
         $this->authModel->auth(["bioscoop"]);
 
@@ -143,6 +235,11 @@ class BiosController {
         include "view/biosTijden.php";
     }
 
+    /**
+     * processes the bios time form
+     *
+     * @return void
+     */
     public function tijdenAdd() {
         $this->authModel->auth(["bioscoop"]);
 

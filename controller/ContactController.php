@@ -2,17 +2,18 @@
 
 require "model/HTMLElements.php";
 
+/**
+ * the contact controller
+ */
 class ContactController {
 
-    public function __construct() {
-
-
-    }
-
-    public function home()
-    {
+    /**
+     * shows the contact form
+     *
+     * @return void
+     */
+    public function home() {
       include "view/contactFormulier.php";
     }
-
 
 }

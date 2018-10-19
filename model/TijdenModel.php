@@ -44,6 +44,12 @@ class TijdenModel {
         );
     }
 
+    /**
+     * reads available times
+     *
+     * @param int $zaal_id the zaal id
+     * @return array the query data
+     */
     public function readAvailableTimes($zaal_id) {
         return $this->dataHandler->readData(
             "SELECT * FROM `tijden` WHERE zaal_id = :zaal_id AND `tijd_id` NOT IN (SELECT reservering_tijd FROM `reservering`)",
@@ -53,6 +59,14 @@ class TijdenModel {
         );
     }
 
+    /**
+     * creates a time
+     *
+     * @param int $zaal_id the zaal id
+     * @param string $begindatum the start date
+     * @param string $einddatum the end date
+     * @return int the tijd id
+     */
     public function create($zaal_id, $begindatum, $einddatum) {
         return $this->dataHandler->createData(
             "INSERT INTO `tijden`(`zaal_id`, `begindatum`, `einddatum`) VALUES (:zaal_id, :begindatum, :einddatum)",

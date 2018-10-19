@@ -34,6 +34,14 @@ class BereikbaarheidModel {
         );
     }
 
+    /**
+     * creates a bereikbaarheid
+     *
+     * @param int $bios_id the bios id
+     * @param string $naam the name of the bereikbaarheid
+     * @param string $content the content of the bereikbaarheid
+     * @return void
+     */
     public function create($bios_id, $naam, $content) {
         return $this->dataHandler->createData(
             "INSERT INTO `bereikbaarheid`(`bios_id`, `bereikbaarheid_naam`, `bereikbaarheid_content`) VALUES (:bios_id, :naam, :content)",

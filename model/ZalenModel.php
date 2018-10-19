@@ -43,6 +43,18 @@ class ZalenModel {
         );
     }
 
+    /**
+     * creates a zaal
+     *
+     * @param int $zaalnummer the zaal number
+     * @param int $bios_id the bios id
+     * @param int $aantal_stoelen the amount of chairs
+     * @param int $rolstoelplaatsen the amount of chairs
+     * @param string $schermgrootte the size of the screen
+     * @param string $faciliteiten the facilities
+     * @param string $versies the versies
+     * @return int zaal id
+     */
     public function create($zaalnummer, $bios_id, $aantal_stoelen, $rolstoelplaatsen, $schermgrootte, $faciliteiten, $versies) {
         return $this->dataHandler->createData(
             "INSERT INTO `zalen`(`zaalnummer`, `bios_id`, `aantal_stoelen`, `rolstoelplaatsen`, `schermgrootte`, `faciliteiten`, `versies`) VALUES (:zaalnummer, :bios_id, :aantal_stoelen, :rolstoelplaatsen, :schermgrootte, :faciliteiten, :versies)",

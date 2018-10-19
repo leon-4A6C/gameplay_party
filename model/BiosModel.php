@@ -78,6 +78,11 @@ class BiosModel {
         );
     }
 
+    /**
+     * the select for the home page
+     *
+     * @return void
+     */
     public function selectHome() {
         return $this->dataHandler->readData(
             "(SELECT MIN(`zalen`.`aantal_stoelen`) as `aantal_stoelen`, `bioscopen`.`bios_id`, `bioscopen`.`bios_naam`, `bioscopen`.`bios_beschrijving`, `afbeeldingen`.`afbeelding_path` FROM `zalen` INNER JOIN `bioscopen` ON `zalen`.`bios_id` = `bioscopen`.`bios_id` LEFT JOIN `afbeeldingen` ON `afbeeldingen`.`bios_id` = `bioscopen`.`bios_id` LIMIT 1)
